@@ -1,12 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
+// import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {ReactTyped} from "react-typed";
 import { Link as ScrollLink } from "react-scroll";
 import {
   Github, Linkedin, Mail, Phone, MapPin, ExternalLink, ArrowRight, ChevronDown,
   Cpu, Database, BarChart3, Cloud, Sparkles, GraduationCap, Award, Briefcase,
-  Layers, Send, Star, Bot, DatabaseZap, Pi, BadgeCheck
+  Layers, Send, Bot, DatabaseZap, Pi, BadgeCheck
 } from "lucide-react";
+// import {
+//   Github, Linkedin, Mail, Phone, MapPin, ExternalLink, ArrowRight, ChevronDown,
+//   Cpu, Database, BarChart3, Cloud, Sparkles, GraduationCap, Award, Briefcase,
+//   Layers, Send, Star, Bot, DatabaseZap, Pi, BadgeCheck
+// } from "lucide-react";
 
 /* ===========================
    Lightweight Particle Background (no deps)
@@ -257,13 +263,14 @@ const SKILLS = {
   Subjects: ["DSA", "OOP", "DBMS", "AI", "ML", "Deep Learning"],
 };
 
-const PROJECTS = [
+
+const PROJECTS= [
   {
     title: "CAIRA — Cogitate’s AI Response Agent",
     stack: ["Python", "Azure", "Agents", "LLMs"],
     summary:
       "Enterprise-grade AI assistant integrated with Cogitate data & workflows; robust orchestration, evaluation, and safety guardrails.",
-    link: null,
+    link: 'null',
     highlight: true,
     icon: <Bot className="h-5 w-5" />,
   },
@@ -272,7 +279,7 @@ const PROJECTS = [
     stack: ["Microsoft Fabric", "Azure Cosmos DB", "Data Engineering"],
     summary:
       "End-to-end ETL on Cosmos data powering analytics and BI across TEST/UAT/PROD environments.",
-    link: null,
+    link: 'null',
     icon: <Pi className="h-5 w-5" />,
   },
   {
@@ -584,11 +591,10 @@ export default function App() {
       <Section id="projects" title="Highlighted Projects" icon={Pi}>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, idx) => {
+            const isPublic = p.link && p.link !== "null"; // ✅ handle "null" string
             const CardContent = (
               <GlassCard
-                className={`h-full ${
-                  p.highlight ? "ring-1 ring-cyan-400/30" : ""
-                }`}
+                className={`h-full ${p.highlight ? "ring-1 ring-cyan-400/30" : ""}`}
               >
                 <div className="mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -598,8 +604,8 @@ export default function App() {
                     </h3>
                   </div>
 
-                  {/* Show link icon only if project has a public link */}
-                  {p.link ? (
+                  {/* ✅ Show ExternalLink only if link is valid */}
+                  {isPublic ? (
                     <ExternalLink className="h-4 w-4 text-white/60" />
                   ) : (
                     <span className="text-[10px] px-2 py-1 rounded-md bg-white/10 text-white/60">
@@ -610,11 +616,6 @@ export default function App() {
 
                 <p className="text-sm text-white/75">{p.summary}</p>
 
-                {/* Optional note below summary */}
-                {p.note && (
-                  <p className="mt-2 text-xs text-white/50 italic">{p.note}</p>
-                )}
-
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.stack.map((s) => (
                     <Tag key={s}>{s}</Tag>
@@ -623,8 +624,8 @@ export default function App() {
               </GlassCard>
             );
 
-            return p.link ? (
-              // Clickable project (public)
+            // ✅ Only make it clickable when link is valid
+            return isPublic ? (
               <motion.a
                 key={idx}
                 href={p.link}
@@ -638,7 +639,6 @@ export default function App() {
                 {CardContent}
               </motion.a>
             ) : (
-              // Non-clickable confidential project
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -652,6 +652,7 @@ export default function App() {
           })}
         </div>
       </Section>
+
 
 
       {/* Education */}
