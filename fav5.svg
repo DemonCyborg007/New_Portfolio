@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad_soph2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#6366F1;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="32" fill="#0F172A"/>
+    
+    <circle cx="32" cy="28" r="5" fill="url(#grad_soph2)"/>
+    
+    <path d="M16 28C16 19.1634 23.1634 12 32 12C40.8366 12 48 19.1634 48 28" stroke="url(#grad_soph2)" stroke-width="4" stroke-linecap="round"/>
+    
+    <path d="M20 44C26 44 30 40 36 34C42 28 46 28 52 28" stroke="url(#grad_soph2)" stroke-width="4" stroke-linecap="round"/>
+</svg>
