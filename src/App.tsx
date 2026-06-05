@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 // import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {ReactTyped} from "react-typed";
+import { ReactTyped } from "react-typed";
 import { Link as ScrollLink } from "react-scroll";
 import {
   Github, Linkedin, Mail, Phone, MapPin, ExternalLink, ArrowRight, ChevronDown,
@@ -45,7 +45,7 @@ function ParticleField() {
       //pointColor: "rgba(56,189,248,0.9)", // particle fill color
       pointColor: "rgba(56,189,248,0.9)",
       lineColor: "rgba(168,85,247,0.22)",
-      cursorLineColor: [255,215,0]
+      cursorLineColor: [255, 215, 0]
       //lineColor: "rgba(168,85,247,0.22)", // connection line color
       // signalChance: 0.02,              // probability each frame of new signal
       // signalSpeedMin: 0.02,            // min speed of a signal
@@ -213,7 +213,7 @@ const CONTACT = {
   phone: "+91-7001953146",
   location: "Bhopal, India",
   socials: [
-    { label: "Resume", icon: <ExternalLink className="h-5 w-5" />, href: "https://drive.google.com/file/d/14kmYwVm54fxwpjiBoMXsbds5UWS8Yhvv/view" },
+    { label: "Resume", icon: <ExternalLink className="h-5 w-5" />, href: "https://drive.google.com/file/d/1qK96JVe6eXjd-zfyyhqvqPw1UiMVZqSS/view" },
     { label: "GitHub", icon: <Github className="h-5 w-5" />, href: "https://github.com/DemonCyborg007" },
     // { label: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, href: "#" },
     { label: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/mayukh-roy-9049b722a/" },
@@ -264,7 +264,7 @@ const SKILLS = {
 };
 
 
-const PROJECTS= [
+const PROJECTS = [
   {
     title: "CAIRA — Cogitate’s AI Response Agent",
     stack: ["Python", "Azure", "Agents", "LLMs"],
@@ -541,11 +541,11 @@ export default function App() {
               <GlassCard>
                 <div className="mb-3 flex items-center gap-2 text-white">
                   {group.includes("Database") ? <Database className="h-5 w-5 text-fuchsia-300" /> :
-                   group.includes("Languages") ? <Cpu className="h-5 w-5 text-cyan-300" /> :
-                   group.includes("Frameworks") ? <Layers className="h-5 w-5 text-teal-300" /> :
-                   group.includes("Platforms") ? <Cloud className="h-5 w-5 text-sky-300" /> :
-                   group.includes("Tools") ? <BarChart3 className="h-5 w-5 text-indigo-300" /> :
-                   <DatabaseZap className="h-5 w-5 text-violet-300" />}
+                    group.includes("Languages") ? <Cpu className="h-5 w-5 text-cyan-300" /> :
+                      group.includes("Frameworks") ? <Layers className="h-5 w-5 text-teal-300" /> :
+                        group.includes("Platforms") ? <Cloud className="h-5 w-5 text-sky-300" /> :
+                          group.includes("Tools") ? <BarChart3 className="h-5 w-5 text-indigo-300" /> :
+                            <DatabaseZap className="h-5 w-5 text-violet-300" />}
                   <h3 className="font-semibold">{group}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
